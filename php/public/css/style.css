@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f4f7;
+    color: #222;
+    margin: 0;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f2f4f7;
+}
+
+form {
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button, .botao {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 16px;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+button:hover, .botao:hover {
+    background-color: #1a252f;
+}
+
+.botao-excluir {
+    background-color: #c0392b;
+}
+
+.botao-excluir:hover {
+    background-color: #922b21;
+}
+
+.acoes a {
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.alerta {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.alerta-erro {
+    background-color: #fdecea;
+    color: #922b21;
+    border: 1px solid #f5c6cb;
+}
+
+.alerta-sucesso {
+    background-color: #e9f7ef;
+    color: #1e7e34;
+    border: 1px solid #c3e6cb;
+}
+
+.menu-cards {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu-cards a {
+    flex: 1 1 200px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: center;
+}
+
+.menu-cards a:hover {
+    background-color: #dfe6e9;
+}
+
+.status-disponivel {
+    color: #1e7e34;
+    font-weight: bold;
+}
+
+.status-indisponivel {
+    color: #c0392b;
+    font-weight: bold;
+}

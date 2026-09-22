@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  php-web:
+    image: php:8.2-apache
+    command: bash -c "docker-php-ext-install pdo_mysql && apache2-foreground"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./php/public:/var/www/html
+      - ./php/scripts-php:/var/www/scripts
+    networks:
+      - php-network
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: aula_db
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - php-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
+    networks:
+      - php-network
+  composer:
+    image: composer:2
+    # command: composer create-project laravel/laravel projetos
+    volumes:
+    - ./laravel:/app
+    networks:
+    - php-network
+
+volumes:
+  mysql-data:
+
+networks:
+  php-network:
