@@ -39,9 +39,9 @@ services:
     - ./laravel:/app
     networks:
     - php-network
-
+# docker compose exec laravel bash
   laravel:
-    image: php:8.3-cli
+    image: php:8.4.1-cli
     working_dir: /app
     command: >
       bash -c "apt-get update && apt-get install -y git unzip libzip-dev

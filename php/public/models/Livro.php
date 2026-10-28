@@ -58,13 +58,18 @@ class Livro {
     // do livro com o :id informado. Dica: siga o mesmo padrão do create().
     public function atualizar() {
         $query = "UPDATE livro
-                   SET titulo = :titulo,
-                       -- TODO: adicione aqui os outros campos (autor, isbn, quantidade_total)
-                   WHERE id = :id";
+                SET titulo = :titulo,
+                    autor = :autor,
+                    isbn = :isbn,
+                    quantidade_total = :quantidade_total
+                WHERE id = :id";
+                
         $stmt = $this->conexao->prepare($query);
 
         $stmt->bindParam(':titulo', $this->titulo);
-        // TODO: bindParam dos outros campos
+        $stmt->bindParam(':autor', $this->autor);
+        $stmt->bindParam(':isbn', $this->isbn);
+        $stmt->bindParam(':quantidade_total', $this->quantidade_total);
         $stmt->bindParam(':id', $this->id);
 
         $stmt->execute();
